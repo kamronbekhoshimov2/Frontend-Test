@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Test Platformasi</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="./img/image.png" type="image/x-icon" />
+    <style>
+      .stagger {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: slideUp 0.5s ease forwards;
+      }
+      .stagger:nth-child(1) {
+        animation-delay: 0.05s;
+      }
+      .stagger:nth-child(2) {
+        animation-delay: 0.12s;
+      }
+      .stagger:nth-child(3) {
+        animation-delay: 0.19s;
+      }
+      .stagger:nth-child(4) {
+        animation-delay: 0.26s;
+      }
+      .stagger:nth-child(5) {
+        animation-delay: 0.33s;
+      }
+      @keyframes slideUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .index-header {
+        opacity: 0;
+        animation: slideUp 0.5s ease forwards;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow blue"></div>
+    <div class="glow gold"></div>
+    <div class="glow green"></div>
+
+    <div class="index-wrap">
+      <div class="index-header">
+        <div class="mono-tag">// Frontend · Test · Platformasi</div>
+        <h1>Bilimingizni <span class="grad">Sinab Ko'ring</span></h1>
+        <p>
+          HTML, CSS, JavaScript, DOM va React bo'yicha testlarni yeching va
+          natijalaringizni kuzating.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        <!-- HTML -->
+        <a
+          href="html-quiz.html"
+          class="topic-card stagger"
+          style="--c: #f97316"
+        >
+          <div class="card-icon">🏗️</div>
+          <div class="card-title">HTML</div>
+          <div class="card-desc">
+            Teglar, semantika, formalar, atributlar va HTML5 yangiliklari
+            bo'yicha test.
+          </div>
+          <div class="card-footer">
+            <span class="card-count">12 savol</span>
+            <span class="card-arrow">→</span>
+          </div>
+        </a>
+
+        <!-- CSS -->
+        <a href="css-quiz.html" class="topic-card stagger" style="--c: #06b6d4">
+          <div class="card-icon">🎨</div>
+          <div class="card-title">CSS</div>
+          <div class="card-desc">
+            Flexbox, Grid, animatsiyalar, specificity va responsive dizayn
+            bo'yicha test.
+          </div>
+          <div class="card-footer">
+            <span class="card-count">12 savol</span>
+            <span class="card-arrow">→</span>
+          </div>
+        </a>
+
+        <!-- JavaScript -->
+        <a href="js-quiz.html" class="topic-card stagger" style="--c: #f7c948">
+          <div class="card-icon">⚡</div>
+          <div class="card-title">JavaScript</div>
+          <div class="card-desc">
+            O'zgaruvchilar, funksiyalar, closures, async/await va ES6+ bo'yicha
+            test.
+          </div>
+          <div class="card-footer">
+            <span class="card-count">12 savol</span>
+            <span class="card-arrow">→</span>
+          </div>
+        </a>
+
+        <!-- JS DOM -->
+        <a href="dom-quiz.html" class="topic-card stagger" style="--c: #a78bfa">
+          <div class="card-icon">🌳</div>
+          <div class="card-title">JS DOM</div>
+          <div class="card-desc">
+            DOM manipulyatsiya, eventlar, elementlar bilan ishlash bo'yicha
+            test.
+          </div>
+          <div class="card-footer">
+            <span class="card-count">12 savol</span>
+            <span class="card-arrow">→</span>
+          </div>
+        </a>
+
+        <!-- React -->
+        <a
+          href="react-quiz.html"
+          class="topic-card stagger"
+          style="--c: #4bf5b2"
+        >
+          <div class="card-icon">⚛️</div>
+          <div class="card-title">React</div>
+          <div class="card-desc">
+            Hooks, state, props, lifecycle, Context API va optimizatsiya
+            bo'yicha test.
+          </div>
+          <div class="card-footer">
+            <span class="card-count">12 savol</span>
+            <span class="card-arrow">→</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
