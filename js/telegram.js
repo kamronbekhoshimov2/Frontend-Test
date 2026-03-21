@@ -3,7 +3,9 @@
 // ║  Bu ma'lumotlarni o'zingiznikiga almashtiring ║
 // ╚══════════════════════════════════════════════╝
 const TELEGRAM_BOT_TOKEN = "8139948146:AAE4dlFU019RS2PJskOXgE4o3RNNw8vkAoU";
-const TELEGRAM_CHAT_ID = "6562416815"; // guruh yoki shaxsiy ID
+// Bir nechta chatlarga (start bosgan barcha foydalanuvchilar, guruh, kanal) yuborish uchun IDlarni ro'yxatga yozing.
+// Masalan: ["12345", "67890", "-1001234567890"]
+const TELEGRAM_CHAT_IDS = ["6562416815", "5826696977"];
 
 // ─── Telegram ga yuborish funksiyasi ───────────────────────────────────────
 async function sendResultToTelegram(userData, testResult) {
@@ -52,18 +54,27 @@ ${wrongList}
 
   const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
 
+  // Har bir chat ID uchun yuboramiz; hammasi muvaffaqiyatli bo'lsa true qaytadi.
   try {
-    const res = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        chat_id: TELEGRAM_CHAT_ID,
-        text: msg,
-        parse_mode: "Markdown",
+    const results = await Promise.all(
+      TELEGRAM_CHAT_IDS.map(async (chatId) => {
+        const res = await fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chat_id: chatId,
+            text: msg,
+            parse_mode: "Markdown",
+          }),
+        });
+        const data = await res.json();
+        if (!data.ok) {
+          console.error(`Telegram xatosi (${chatId}):`, data.description);
+        }
+        return data.ok;
       }),
-    });
-    const data = await res.json();
-    return data.ok;
+    );
+    return results.every(Boolean);
   } catch (err) {
     console.error("Telegram xatosi:", err);
     return false;
