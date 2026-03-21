@@ -99,6 +99,7 @@
       state.seconds++;
       updateTimer();
     }, 1000);
+    updateTimer();
   }
 
   function updateTimer() {
@@ -109,7 +110,11 @@
       .padStart(2, "0");
     const s = (state.seconds % 60).toString().padStart(2, "0");
     el.textContent = `⏱ ${m}:${s}`;
-    if (state.seconds > 300) el.classList.add("urgent");
+    if (state.seconds > 300) {
+      el.classList.add("urgent");
+    } else {
+      el.classList.remove("urgent");
+    }
   }
 
   function getTimeTaken() {
@@ -130,6 +135,8 @@
     // Progress
     const pct = (state.current / total) * 100;
     $("#prog-fill").style.width = pct + "%";
+    const pctLabel = $("#prog-pct");
+    if (pctLabel) pctLabel.textContent = `${Math.round(pct)}%`;
     $("#prog-cur").textContent = state.current + 1;
     $("#prog-total").textContent = total;
 
@@ -147,7 +154,12 @@
       const btn = document.createElement("button");
       btn.className = "opt-btn";
       btn.dataset.idx = i;
-      btn.innerHTML = `<span class="opt-letter">${LETTERS[i]}</span> ${opt}`;
+      const letterSpan = document.createElement("span");
+      letterSpan.className = "opt-letter";
+      letterSpan.textContent = LETTERS[i];
+      btn.appendChild(letterSpan);
+      const textNode = document.createTextNode(" " + opt);
+      btn.appendChild(textNode);
       btn.addEventListener("click", () => selectOption(btn, i, q));
       list.appendChild(btn);
     });
@@ -200,22 +212,17 @@
 
       // Highlight the correct answer
       // $$(".opt-btn").forEach((b) => {
-      //   if (parseInt(b.dataset.idx) === q.correctShuffledIndex) {
+      //   if (parseInt(b.dataset.idx, 10) === q.correctShuffledIndex) {
       //     b.classList.add("correct");
       //   }
       // });
 
-      // const fb = $("#feedback-bar");
-      // fb.className = "feedback-bar err show";
+      // // Record wrong answer
       // const correctText = q.shuffledOptions[q.correctShuffledIndex];
-      // fb.textContent = `❌ Noto'g'ri! To'g'ri javob: "${correctText}"`;
-
-      // Record wrong answer
       // state.wrongAnswers.push({
       //   question: q.question,
       //   correct: correctText,
-      // });
-
+      //       // });
       setTimeout(() => {
         state.current++;
         if (state.current < state.questions.length) {

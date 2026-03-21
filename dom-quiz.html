@@ -1,110 +1,156 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uz">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JS DOM Test</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <div class="glow blue"></div>
-  <div class="glow gold"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS DOM Test</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="glow blue"></div>
+    <div class="glow gold"></div>
 
-  <!-- REGISTRATION PAGE -->
-  <div id="page-reg" class="page" style="display:none">
-    <div class="reg-wrap">
-      <div class="reg-card">
-        <a href="index.html" class="back-link">← Orqaga</a>
-        <div class="reg-badge" style="--c:#a78bfa">🌳 JS DOM Bo'limi</div>
-        <h2>Testni boshlash</h2>
-        <p class="reg-sub">Ma'lumotlaringizni kiriting. Test natijasi Telegram ga yuboriladi.</p>
+    <!-- REGISTRATION PAGE -->
+    <div id="page-reg" class="page" style="display: none">
+      <div class="reg-wrap">
+        <div class="reg-card">
+          <a href="index.html" class="back-link">← Orqaga</a>
+          <div class="reg-badge" style="--c: #a78bfa">🌳 JS DOM Bo'limi</div>
+          <h2>Testni boshlash</h2>
+          <p class="reg-sub">
+            Ma'lumotlaringizni kiriting. Test natijasi Telegram ga yuboriladi.
+          </p>
 
-        <form id="reg-form">
-          <div class="form-group">
-            <label>Ismingiz</label>
-            <input id="inp-first" class="reg-input" type="text" placeholder="Masalan: Jasur" autocomplete="off" required>
-          </div>
-          <div class="form-group">
-            <label>Familiyangiz</label>
-            <input id="inp-last" class="reg-input" type="text" placeholder="Masalan: Toshmatov" autocomplete="off" required>
-          </div>
-          <div class="form-group">
-            <label>Guruhingiz</label>
-            <input id="inp-group" class="reg-input" type="text" placeholder="Masalan: N11" autocomplete="off" required>
-          </div>
-          <button type="submit" id="btn-start" class="btn-start" style="background:#a78bfa" disabled>Testni Boshlash →</button>
-        </form>
+          <form id="reg-form">
+            <div class="form-group">
+              <label>Ismingiz</label>
+              <input
+                id="inp-first"
+                class="reg-input"
+                type="text"
+                placeholder="Masalan: Jasur"
+                autocomplete="off"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Familiyangiz</label>
+              <input
+                id="inp-last"
+                class="reg-input"
+                type="text"
+                placeholder="Masalan: Toshmatov"
+                autocomplete="off"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Guruhingiz</label>
+              <input
+                id="inp-group"
+                class="reg-input"
+                type="text"
+                placeholder="Masalan: N11"
+                autocomplete="off"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              id="btn-start"
+              class="btn-start"
+              style="background: #a78bfa"
+              disabled
+            >
+              Testni Boshlash →
+            </button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- QUIZ PAGE -->
-  <div id="page-quiz" class="page" style="display:none">
-    <div class="quiz-wrap">
-      <div class="quiz-topbar">
-        <div class="quiz-meta">
-          <span class="q-topic" style="--c:#a78bfa">🌳 JS DOM Test</span>
-          <span class="q-user" id="q-user"></span>
-        </div>
-        <div class="quiz-timer" id="quiz-timer">⏱ 00:00</div>
-      </div>
-
-      <div class="prog-wrap">
-        <div class="prog-meta">
-          <span>Savol <strong id="prog-cur">1</strong> / <strong id="prog-total">12</strong></span>
-          <span id="prog-pct">0%</span>
-        </div>
-        <div class="prog-bar">
-          <div class="prog-fill" id="prog-fill" style="width:0%;--c:#a78bfa"></div>
-        </div>
-      </div>
-
-      <div class="q-card">
-        <div class="q-num" id="q-num"></div>
-        <div class="q-text" id="q-text"></div>
-      </div>
-
-      <div class="options-list" id="options-list"></div>
-      <div class="feedback-bar" id="feedback-bar"></div>
-    </div>
-  </div>
-
-  <!-- RESULT PAGE -->
-  <div id="page-result" class="page" style="display:none">
-    <div class="result-wrap">
-      <div class="result-card">
-        <span class="result-emoji" id="result-emoji">🏆</span>
-        <div class="result-pct" id="result-pct">0%</div>
-        <div class="result-lbl">JS DOM bo'limi natijasi</div>
-
-        <div class="result-stats">
-          <div class="stat-box">
-            <div class="stat-val" id="result-score" style="color:#4bf5b2">—</div>
-            <div class="stat-key">To'g'ri javob</div>
+    <!-- QUIZ PAGE -->
+    <div id="page-quiz" class="page" style="display: none">
+      <div class="quiz-wrap">
+        <div class="quiz-topbar">
+          <div class="quiz-meta">
+            <span class="q-topic" style="--c: #a78bfa">🌳 JS DOM Test</span>
+            <span class="q-user" id="q-user"></span>
           </div>
-          <div class="stat-box">
-            <div class="stat-val" id="result-time" style="color:#f7c948">—</div>
-            <div class="stat-key">Sarflangan vaqt</div>
+          <div class="quiz-timer" id="quiz-timer">⏱ 00:00</div>
+        </div>
+
+        <div class="prog-wrap">
+          <div class="prog-meta">
+            <span
+              >Savol <strong id="prog-cur">1</strong> /
+              <strong id="prog-total">20</strong></span
+            >
+            <span id="prog-pct">0%</span>
           </div>
-          <div class="stat-box">
-            <div class="stat-val" id="result-wrong" style="color:#f74f6a">—</div>
-            <div class="stat-key">Noto'g'ri</div>
+          <div class="prog-bar">
+            <div
+              class="prog-fill"
+              id="prog-fill"
+              style="width: 0%; --c: #a78bfa"
+            ></div>
           </div>
         </div>
 
-        <div class="tg-status">
-          <span class="tg-dot" id="tg-dot"></span>
-          <span id="tg-status-text">Telegram ga yuborilmoqda...</span>
+        <div class="q-card">
+          <div class="q-num" id="q-num"></div>
+          <div class="q-text" id="q-text"></div>
         </div>
 
-        <a href="index.html" class="btn-home">← Bosh sahifaga qaytish</a>
+        <div class="options-list" id="options-list"></div>
+        <div class="feedback-bar" id="feedback-bar"></div>
       </div>
     </div>
-  </div>
 
-  <script src="data/dom-questions.js"></script>
-  <script src="js/telegram.js"></script>
-  <script src="js/quiz-engine.js"></script>
-  <script>initQuiz();</script>
-</body>
+    <!-- RESULT PAGE -->
+    <div id="page-result" class="page" style="display: none">
+      <div class="result-wrap">
+        <div class="result-card">
+          <span class="result-emoji" id="result-emoji">🏆</span>
+          <div class="result-pct" id="result-pct">0%</div>
+          <div class="result-lbl">JS DOM bo'limi natijasi</div>
+
+          <div class="result-stats">
+            <div class="stat-box">
+              <div class="stat-val" id="result-score" style="color: #4bf5b2">
+                —
+              </div>
+              <div class="stat-key">To'g'ri javob</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-val" id="result-time" style="color: #f7c948">
+                —
+              </div>
+              <div class="stat-key">Sarflangan vaqt</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-val" id="result-wrong" style="color: #f74f6a">
+                —
+              </div>
+              <div class="stat-key">Noto'g'ri</div>
+            </div>
+          </div>
+
+          <div class="tg-status">
+            <span class="tg-dot" id="tg-dot"></span>
+            <span id="tg-status-text">Telegram ga yuborilmoqda...</span>
+          </div>
+
+          <a href="index.html" class="btn-home">← Bosh sahifaga qaytish</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="data/dom-questions.js"></script>
+    <script src="js/telegram.js"></script>
+    <script src="js/quiz-engine.js"></script>
+    <script>
+      initQuiz();
+    </script>
+  </body>
 </html>

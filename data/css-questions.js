@@ -6,45 +6,118 @@ window.TOPIC_NAME = "CSS";
 window.TOPIC_COLOR = "#06b6d4"; // cyan
 window.TOPIC_QUESTIONS = [
   {
+    question: "CSS nimani anglatadi?",
+    options: [
+      "Creative Style Sheets",
+      "Computer Style Sheets",
+      "Color Style Sheets",
+      "Cascading Style Sheets",
+    ],
+    correct: 3,
+  },
+  {
+    question: "Matn rangini o'zgartirish uchun qaysi xususiyat ishlatiladi?",
+    options: ["font", "text", "bg", "color"],
+    correct: 3,
+  },
+  {
+    question: "Fon rangini o'zgartirish uchun qaysi xususiyat ishlatiladi?",
+    options: ["bg-color", "color-bg", "back", "background-color"],
+    correct: 3,
+  },
+  {
+    question: "Margin nima?",
+    options: [
+      "Ichki bo'shliq",
+      "Border qalinligi",
+      "Font o'lchami",
+      "Elementning tashqi bo'shlig'i",
+    ],
+    correct: 3,
+  },
+  {
+    question: "Padding nima?",
+    options: [
+      "Tashqi bo'shliq",
+      "Border rangi",
+      "Matn o'lchami",
+      "Elementning ichki bo'shlig'i",
+    ],
+    correct: 3,
+  },
+  {
+    question: "Flexbox yoqish uchun qaysi xususiyat ishlatiladi?",
+    options: ["flex:on", "layout:flex", "use:flex", "display:flex"],
+    correct: 3,
+  },
+  {
+    question: "CSS Grid yoqish uchun qaysi xususiyat ishlatiladi?",
+    options: ["grid:on", "use:grid", "layout:grid", "display:grid"],
+    correct: 3,
+  },
+  {
     question:
-      "CSS da elementni gorizontal markazga joylashtirish uchun flexbox da qaysi xususiyat ishlatiladi?",
-    options: [
-      "align-items: center",
-      "justify-content: center",
-      "text-align: flex",
-      "center: horizontal",
-    ],
-    correct: 1,
+      "Matnni gorizontal markazga qo'yish uchun qaysi xususiyat ishlatiladi?",
+    options: ["align:center", "center:text", "pos:center", "text-align:center"],
+    correct: 3,
   },
   {
-    question: "CSS 'box model' to'g'ri tartibda qaysi?",
-    options: [
-      "Content → Margin → Border → Padding",
-      "Content → Padding → Border → Margin",
-      "Border → Content → Padding → Margin",
-      "Margin → Border → Content → Padding",
-    ],
-    correct: 1,
+    question:
+      "Elementga chegara (border) berish uchun qaysi xususiyat ishlatiladi?",
+    options: ["line", "edge", "frame", "border"],
+    correct: 3,
   },
   {
-    question: "CSS da eng yuqori specificity (ustuvorlik) qaysi?",
+    question: "Soya (shadow) effekti uchun qaysi xususiyat ishlatiladi?",
+    options: ["shadow-box", "shade", "effect", "box-shadow"],
+    correct: 3,
+  },
+  {
+    question:
+      "Sichqoncha ustida turganida stil berish uchun qaysi pseudo-klass ishlatiladi?",
+    options: ["::hover", "hover()", "onHover", ":hover"],
+    correct: 3,
+  },
+  {
+    question: "Z-index nima uchun ishlatiladi?",
     options: [
-      "element selector",
-      "class selector",
-      "id selector",
-      "inline style",
+      "Rang berish uchun",
+      "Kenglik belgilash uchun",
+      "Balandlik belgilash uchun",
+      "Elementlar qatlamini (layer) boshqarish uchun",
     ],
+    correct: 3,
+  },
+  {
+    question: "Elementni ko'rinmas qilish uchun qaysi xususiyat ishlatiladi?",
+    options: ["yashiradi", "ko'rsatadi", "o'zgartiradi", "display:none"],
+    correct: 3,
+  },
+  {
+    question:
+      "CSS da shaffoflikni (opacity) boshqarish uchun qaysi xususiyat ishlatiladi?",
+    options: ["rang", "font", "size", "opacity"],
+    correct: 3,
+  },
+  {
+    question: "Responsive dizayn uchun qaysi CSS texnikasi ishlatiladi?",
+    options: ["rang", "font", "script", "Media query (@media)"],
+    correct: 3,
+  },
+  {
+    question: "Font o'lchamini o'zgartirish uchun qaysi xususiyat ishlatiladi?",
+    options: ["text-size", "size", "f-size", "font-size"],
     correct: 3,
   },
   {
     question: "position: absolute element qayerga nisbatan joylashadi?",
     options: [
       "Har doim sahifa boshiga nisbatan",
-      "Eng yaqin positioned (relative/absolute/fixed) ota elementga nisbatan",
       "Faqat body ga nisbatan",
       "Qo'shni elementga nisbatan",
+      "Eng yaqin positioned ota elementga nisbatan",
     ],
-    correct: 1,
+    correct: 3,
   },
   {
     question:
@@ -52,41 +125,10 @@ window.TOPIC_QUESTIONS = [
     options: [
       "grid-columns: 3",
       "columns: 3 equal",
-      "grid-template-columns: repeat(3, 1fr)",
       "grid: 3fr",
-    ],
-    correct: 2,
-  },
-  {
-    question: "z-index xususiyati qaysi elementlarda ishlaydi?",
-    options: [
-      "Har qanday elementda",
-      "Faqat flex elementlarda",
-      "Faqat position: static bo'lmagan elementlarda",
-      "Faqat block elementlarda",
-    ],
-    correct: 2,
-  },
-  {
-    question: "CSS da :nth-child(2n+1) pseudoklassi nimani tanlaydi?",
-    options: [
-      "Juft elementlarni",
-      "Har 3-chi elementni",
-      "2-chi elementni",
-      "Toq elementlarni",
+      "grid-template-columns: repeat(3, 1fr)",
     ],
     correct: 3,
-  },
-  {
-    question:
-      "transition: all 0.3s ease-in-out da 'ease-in-out' nimani anglatadi?",
-    options: [
-      "Animatsiya davomiyligi",
-      "Animatsiya kechikishi (delay)",
-      "Vaqt funksiyasi (timing function)",
-      "Animatsiya takrori",
-    ],
-    correct: 2,
   },
   {
     question:
@@ -100,34 +142,14 @@ window.TOPIC_QUESTIONS = [
     correct: 3,
   },
   {
-    question: "display: none va visibility: hidden ning farqi nima?",
-    options: [
-      "Hech qanday farq yo'q",
-      "display:none joyni egallaydi, visibility:hidden egallamaydi",
-      "display:none joyni egallamaydi, visibility:hidden joy egallaydi",
-      "Ikkalasi ham joyni egallaydi",
-    ],
-    correct: 2,
-  },
-  {
-    question: "CSS da media query yozish to'g'ri sintaksisi qaysi?",
-    options: [
-      "@media-query (max-width: 768px) { }",
-      "media(max-width: 768px) { }",
-      "@screen (max-width: 768px) { }",
-      "@media (max-width: 768px) { }",
-    ],
-    correct: 3,
-  },
-  {
     question:
       "Flexbox da elementlarni vertikal markazga joylashtirish uchun qaysi xususiyat ishlatiladi?",
     options: [
       "justify-content: center",
       "vertical-align: center",
-      "align-items: center",
       "align-content: center",
+      "align-items: center",
     ],
-    correct: 2,
+    correct: 3,
   },
 ];

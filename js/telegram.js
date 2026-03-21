@@ -2,9 +2,8 @@
 // ║        TELEGRAM BOT KONFIGURATSIYASI         ║
 // ║  Bu ma'lumotlarni o'zingiznikiga almashtiring ║
 // ╚══════════════════════════════════════════════╝
-
-const TELEGRAM_BOT_TOKEN = "8139948146:AAE4dlFU019RS2PJskOXgE4o3RNNw8vkAoU"; // @BotFather dan
-const TELEGRAM_CHAT_ID = "6562416815"; // guruh yoki shaxsiy ID
+const TELEGRAM_BOT_TOKEN = "8139948146:AAE4dlFU019RS2PJskOXgE4o3RNNw8vkAoU";
+const TELEGRAM_CHAT_ID = "7531494911"; // guruh yoki shaxsiy ID
 
 // ─── Telegram ga yuborish funksiyasi ───────────────────────────────────────
 async function sendResultToTelegram(userData, testResult) {

@@ -2,63 +2,94 @@
 //  JS DOM BO'LIMI — SAVOLLAR VA JAVOBLAR
 // ═══════════════════════════════════════════════
 
-window.TOPIC_NAME      = "JS DOM";
-window.TOPIC_COLOR     = "#a78bfa";   // violet
+window.TOPIC_NAME = "JS DOM";
+window.TOPIC_COLOR = "#a78bfa"; // violet
 window.TOPIC_QUESTIONS = [
   {
-    question: "DOM nima?",
-    options: [
-      "Data Object Method",
-      "Dynamic Output Module",
-      "Document Object Model — HTML ni ob'ekt sifatida ifodalash",
-      "Design Object Manager"
-    ],
-    correct: 2
+    question:
+      "CSS selektor orqali elementni topish uchun qaysi metod ishlatiladi?",
+    options: ["get()", "find()", "pick()", "querySelector()"],
+    correct: 3,
   },
   {
-    question: "ID bo'yicha element topish uchun qaysi metod ishlatiladi?",
+    question: "ID orqali elementni topish uchun qaysi metod ishlatiladi?",
+    options: ["getId()", "selectId()", "id()", "getElementById()"],
+    correct: 3,
+  },
+  {
+    question: "Klass orqali elementlarni topish uchun qaysi metod ishlatiladi?",
     options: [
-      "document.getElement('id')",
-      "document.getElementById('id')",
-      "document.find('#id')",
-      "document.query('id')"
+      "getClass()",
+      "selectClass()",
+      "class()",
+      "getElementsByClassName()",
     ],
-    correct: 1
+    correct: 3,
   },
   {
     question: "Element matnini o'zgartirish uchun qaysi xususiyat ishlatiladi?",
-    options: ["element.text", "element.value", "element.string", "element.textContent"],
-    correct: 3
+    options: ["changeText", "text()", "setText", "innerHTML / textContent"],
+    correct: 3,
   },
   {
-    question: "Tugma bosilganda ishlovchi funksiya qo'shish uchun qaysi metod?",
+    question:
+      "Elementga event (hodisa) qo'shish uchun qaysi metod ishlatiladi?",
+    options: ["onEvent()", "listen()", "bind()", "addEventListener()"],
+    correct: 3,
+  },
+  {
+    question: "Elementga CSS klassi qo'shish uchun qaysi metod ishlatiladi?",
+    options: ["addClass()", "pushClass()", "setClass()", "classList.add()"],
+    correct: 3,
+  },
+  {
+    question:
+      "Elementdan CSS klassini olib tashlash uchun qaysi metod ishlatiladi?",
     options: [
-      "element.onClick(fn)",
-      "element.addEvent('click', fn)",
-      "element.addEventListener('click', fn)",
-      "element.on('click', fn)"
+      "delClass()",
+      "removeClass()",
+      "popClass()",
+      "classList.remove()",
     ],
-    correct: 2
+    correct: 3,
+  },
+  {
+    question:
+      "Klassni qo'shish/olib tashlashni almashtirish uchun qaysi metod ishlatiladi?",
+    options: [
+      "switchClass()",
+      "toggleClass()",
+      "flipClass()",
+      "classList.toggle()",
+    ],
+    correct: 3,
   },
   {
     question: "Yangi HTML element yaratish uchun qaysi metod ishlatiladi?",
-    options: [
-      "document.newElement('div')",
-      "document.addElement('div')",
-      "new HTMLElement('div')",
-      "document.createElement('div')"
-    ],
-    correct: 3
+    options: ["make()", "newElement()", "build()", "createElement()"],
+    correct: 3,
   },
   {
-    question: "Elementga CSS klassi qo'shish uchun qaysi usul to'g'ri?",
-    options: [
-      "element.style.class = 'name'",
-      "element.addClass('name')",
-      "element.classList.add('name')",
-      "element.className.push('name')"
-    ],
-    correct: 2
+    question: "Farzand element qo'shish uchun qaysi metod ishlatiladi?",
+    options: ["addChild()", "pushChild()", "insert()", "appendChild()"],
+    correct: 3,
+  },
+  {
+    question: "Elementni DOM dan o'chirish uchun qaysi metod ishlatiladi?",
+    options: ["delete()", "erase()", "clear()", "remove()"],
+    correct: 3,
+  },
+  {
+    question:
+      "Input elementning qiymatini olish uchun qaysi xususiyat ishlatiladi?",
+    options: ["getValue()", "val()", "input()", "value"],
+    correct: 3,
+  },
+  {
+    question:
+      "Elementning inline stilini o'zgartirish uchun qaysi xususiyat ishlatiladi?",
+    options: ["css()", "styleSet()", "design()", "element.style"],
+    correct: 3,
   },
   {
     question: "event.preventDefault() nima qiladi?",
@@ -66,58 +97,50 @@ window.TOPIC_QUESTIONS = [
       "Eventni to'liq o'chiradi",
       "Elementni o'chiradi",
       "Boshqa eventlarni ham to'xtatadi",
-      "Eventning standart xatti-harakatini bekor qiladi"
+      "Eventning standart xatti-harakatini bekor qiladi",
     ],
-    correct: 3
-  },
-  {
-    question: "querySelectorAll() qanday natija qaytaradi?",
-    options: [
-      "Bitta element",
-      "NodeList (barcha mos elementlar)",
-      "HTMLCollection",
-      "Array"
-    ],
-    correct: 1
-  },
-  {
-    question: "innerHTML va textContent ning asosiy farqi nima?",
-    options: [
-      "Hech qanday farq yo'q",
-      "innerHTML HTML teglarini ham qabul qiladi, textContent faqat matn",
-      "textContent HTML teglarini ham qabul qiladi",
-      "innerHTML faqat bitta element uchun"
-    ],
-    correct: 1
-  },
-  {
-    question: "Elementni DOM dan o'chirish uchun to'g'ri metod qaysi?",
-    options: [
-      "element.delete()",
-      "document.remove(element)",
-      "element.destroy()",
-      "element.remove()"
-    ],
-    correct: 3
-  },
-  {
-    question: "parentNode va parentElement farqi nima?",
-    options: [
-      "Hech qanday farq yo'q",
-      "parentNode istalgan node qaytaradi, parentElement faqat Element turidagi ota",
-      "parentElement istalgan node qaytaradi",
-      "parentNode faqat div uchun ishlaydi"
-    ],
-    correct: 1
+    correct: 3,
   },
   {
     question: "event.stopPropagation() nima qiladi?",
     options: [
       "Standart xatti-harakatni bekor qiladi",
       "Sahifani to'xtatadi",
+      "Elementni o'chiradi",
       "Eventning yuqori elementlarga tarqalishini (bubbling) to'xtatadi",
-      "Elementni o'chiradi"
     ],
-    correct: 2
-  }
+    correct: 3,
+  },
+  {
+    question: "Ota elementni olish uchun qaysi xususiyat ishlatiladi?",
+    options: ["getParent()", "parent()", "up()", "parentElement"],
+    correct: 3,
+  },
+  {
+    question: "Farzand elementlarni olish uchun qaysi xususiyat ishlatiladi?",
+    options: ["childs", "kids", "nodes", "children"],
+    correct: 3,
+  },
+  {
+    question:
+      "Keyingi (next) aka-uka elementni olish uchun qaysi xususiyat ishlatiladi?",
+    options: ["next()", "nextNode()", "nextItem()", "nextElementSibling"],
+    correct: 3,
+  },
+  {
+    question:
+      "Oldingi (previous) aka-uka elementni olish uchun qaysi xususiyat ishlatiladi?",
+    options: ["prev()", "before()", "last()", "previousElementSibling"],
+    correct: 3,
+  },
+  {
+    question: "querySelectorAll() qanday natija qaytaradi?",
+    options: [
+      "Bitta element",
+      "HTMLCollection",
+      "Array",
+      "NodeList (barcha mos elementlar)",
+    ],
+    correct: 3,
+  },
 ];
